@@ -53,7 +53,6 @@ function getSecondsToday() {
   }
 
 //7.
-
 function getSecondsToTomorrow() {
     let now = new Date();
   
@@ -66,9 +65,31 @@ function getSecondsToTomorrow() {
 //8.
 function formatDate(date){
     let diff = new Date() - date;
+    let set = Math.floor(diff / 1000);  // n초 단위
+    let min = Math.floor(diff / 60000); // n분 단위
+
     if (diff < 1000) {
       return `현재`; 
     }
+
+    if(diff < set){
+      return set + `초 전`;
+    }
+
+    if(diff < min){
+      return min + `분 전`;
+    }
+
+    let d = date;
+    d= [
+    `0`+ d.getFullYear(),
+    `0`+ (d.getMonth() + 1),
+    `0`+ d.getDate(),
+    `0`+ d.getHours(), 
+    `0`+ getMinutes()
+    ];
+    
+    
 }
 
 
