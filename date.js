@@ -92,5 +92,3 @@ function formatDate(date){
     return `${d[2]}.${d[1]}.${d[0]} ${d[3]}:${d[4]}`;
 }
 
-
-
